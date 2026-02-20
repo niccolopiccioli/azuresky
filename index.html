@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AzureSky Airlines — Vola oltre i confini</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <i data-lucide="plane" class="logo-icon"></i>
+        <span class="logo-text">AzureSky</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#search">Prenota</a></li>
+        <li><a href="#destinations">Destinazioni</a></li>
+        <li><a href="#services">Servizi</a></li>
+        <li><a href="#fleet">La Flotta</a></li>
+        <li><a href="#pricing">Prezzi</a></li>
+        <li><a href="#contact">Contatti</a></li>
+        <li class="mobile-actions">
+          <button class="btn btn-outline" onclick="openModal('loginModal'); switchModalTab('login')">
+            <i data-lucide="log-in"></i> Accedi
+          </button>
+          <button class="btn btn-primary" onclick="openModal('loginModal'); switchModalTab('register')">
+            <i data-lucide="user-plus"></i> Registrati
+          </button>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="openModal('loginModal'); switchModalTab('login')">
+          <i data-lucide="log-in"></i> Accedi
+        </button>
+        <button class="btn btn-primary" onclick="openModal('loginModal'); switchModalTab('register')">
+          <i data-lucide="user-plus"></i> Registrati
+        </button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+    </div>
+    <div class="plane-container">
+      <div class="plane">✈</div>
+      <div class="plane-trail"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag reveal-up">La nuova era del volo</p>
+      <h1 class="hero-title reveal-up delay-1">
+        Vola oltre<br />
+        <span class="gradient-text">ogni confine</span>
+      </h1>
+      <p class="hero-sub reveal-up delay-2">
+        Oltre 200 destinazioni in 80 paesi. Comfort, sicurezza e innovazione<br />a ogni quota.
+      </p>
+      <div class="hero-cta reveal-up delay-3">
+        <button class="btn btn-primary btn-lg" onclick="scrollTo('#search')">Cerca un volo</button>
+        <button class="btn btn-ghost btn-lg" onclick="scrollTo('#destinations')">Scopri le rotte</button>
+      </div>
+      <div class="hero-stats reveal-up delay-4">
+        <div class="stat">
+          <span class="stat-num" data-target="200">0</span><span>+</span>
+          <p>Destinazioni</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span>%</span>
+          <p>Puntualità</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="12">0</span><span>M+</span>
+          <p>Passeggeri/anno</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section" id="search">
+    <div class="container">
+      <div class="search-card glass">
+        <div class="trip-type">
+          <label class="radio-label">
+            <input type="radio" name="trip" value="roundtrip" checked />
+            <span>Andata e ritorno</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="trip" value="oneway" />
+            <span>Solo andata</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="trip" value="multi" />
+            <span>Multi-tratta</span>
+          </label>
+        </div>
+        <div class="search-fields">
+          <div class="field-group">
+            <label for="from">Da</label>
+            <div class="field-input">
+              <i data-lucide="map-pin" class="field-icon"></i>
+              <input type="text" id="from" placeholder="Città o aeroporto" />
+            </div>
+          </div>
+          <button class="swap-btn" id="swapBtn" title="Inverti" aria-label="Inverti">
+            <i data-lucide="arrow-left-right"></i>
+          </button>
+          <div class="field-group">
+            <label for="to">A</label>
+            <div class="field-input">
+              <i data-lucide="map-pin" class="field-icon"></i>
+              <input type="text" id="to" placeholder="Città o aeroporto" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="departure">Partenza</label>
+            <div class="field-input">
+              <i data-lucide="calendar" class="field-icon"></i>
+              <input type="date" id="departure" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="returnDate">Ritorno</label>
+            <div class="field-input">
+              <i data-lucide="calendar" class="field-icon"></i>
+              <input type="date" id="returnDate" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="passengers">Passeggeri</label>
+            <div class="field-input">
+              <i data-lucide="users" class="field-icon"></i>
+              <select id="passengers">
+                <option value="1">1 adulto</option>
+                <option value="2">2 adulti</option>
+                <option value="3">3 adulti</option>
+                <option value="4">4 adulti</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-search" onclick="handleSearch()">
+            <i data-lucide="search"></i> Cerca voli
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag reveal-up">Le nostre rotte</p>
+        <h2 class="section-title reveal-up delay-1">Destinazioni <span class="gradient-text">da sogno</span></h2>
+        <p class="section-sub reveal-up delay-2">Scopri le mete più amate dai nostri passeggeri</p>
+      </div>
+      <div class="dest-filters reveal-up delay-2">
+        <button class="filter-btn active" data-filter="all">Tutte</button>
+        <button class="filter-btn" data-filter="europa">Europa</button>
+        <button class="filter-btn" data-filter="america">America</button>
+        <button class="filter-btn" data-filter="asia">Asia</button>
+        <button class="filter-btn" data-filter="africa">Africa</button>
+      </div>
+      <div class="dest-grid" id="destGrid">
+        </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag reveal-up">Il nostro impegno</p>
+        <h2 class="section-title reveal-up delay-1">Viaggia con <span class="gradient-text">stile</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-up delay-1">
+          <div class="service-icon"><i data-lucide="shield-check"></i></div>
+          <h3>Sicurezza al primo posto</h3>
+          <p>Standard di sicurezza certificati IATA. Flotta revisionata ogni 6 mesi con i più alti protocolli internazionali.</p>
+        </div>
+        <div class="service-card reveal-up delay-2">
+          <div class="service-icon"><i data-lucide="utensils"></i></div>
+          <h3>Gastronomia in quota</h3>
+          <p>Menu firmati da chef stellati. Opzioni vegane, kosher e halal disponibili su ogni rotta internazionale.</p>
+        </div>
+        <div class="service-card reveal-up delay-3">
+          <div class="service-icon"><i data-lucide="headphones"></i></div>
+          <h3>Intrattenimento Premium</h3>
+          <p>Oltre 500 film, serie TV e musica in streaming su display 4K personali con noise-cancelling headphones.</p>
+        </div>
+        <div class="service-card reveal-up delay-4">
+          <div class="service-icon"><i data-lucide="wifi"></i></div>
+          <h3>Wi-Fi ad alta quota</h3>
+          <p>Connessione satellitare ad alta velocità su tutti i voli. Lavora, naviga e rimani connesso a 10.000 metri.</p>
+        </div>
+        <div class="service-card reveal-up delay-1">
+          <div class="service-icon"><i data-lucide="leaf"></i></div>
+          <h3>Volo sostenibile</h3>
+          <p>Compensazione CO₂ su ogni biglietto. Motori di nuova generazione con -40% di emissioni rispetto alla media.</p>
+        </div>
+        <div class="service-card reveal-up delay-2">
+          <div class="service-icon"><i data-lucide="armchair"></i></div>
+          <h3>Comfort assoluto</h3>
+          <p>Sedili ergonomici con maggiore spazio per le gambe in ogni classe. Business con letti flat-bed 2 metri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fleet" id="fleet">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag reveal-up">La nostra flotta</p>
+        <h2 class="section-title reveal-up delay-1">Tecnologia <span class="gradient-text">all'avanguardia</span></h2>
+      </div>
+      <div class="fleet-tabs">
+        <button class="tab-btn active" data-tab="a350">Airbus A350</button>
+        <button class="tab-btn" data-tab="b787">Boeing 787</button>
+        <button class="tab-btn" data-tab="a220">Airbus A220</button>
+      </div>
+      <div class="fleet-display" id="fleetDisplay">
+        </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="cta-bg"></div>
+    <div class="cta-content reveal-up">
+      <p class="section-tag">Offerta limitata</p>
+      <h2>Fino al <span class="gradient-text">40% di sconto</span><br />sulle rotte europee</h2>
+      <p>Solo per i primi 500 prenotazioni. Vola smart con AzureSky.</p>
+      <button class="btn btn-primary btn-lg" onclick="openModal('offerModal')">Scopri l'offerta</button>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag reveal-up">Piani e tariffe</p>
+        <h2 class="section-title reveal-up delay-1">Scegli il tuo <span class="gradient-text">piano</span></h2>
+        <p class="section-sub reveal-up delay-2">Vola di più, spendi meno. Membership flessibili per ogni tipo di viaggiatore.</p>
+      </div>
+
+      <div class="pricing-toggle reveal-up delay-2">
+        <span class="toggle-label active-toggle" id="lblMonthly">Mensile</span>
+        <button class="toggle-switch" id="pricingToggle" aria-label="Cambia a pagamento annuale">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="toggle-label" id="lblAnnual">Annuale <span class="save-badge">-20%</span></span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card reveal-up delay-1">
+          <div class="plan-label">Economy</div>
+          <div class="plan-desc">Per chi vola occasionalmente</div>
+          <div class="plan-price">
+            <span class="price-currency">€</span>
+            <span class="price-amount" data-monthly="0" data-annual="0">0</span>
+            <span class="price-period">/mese</span>
+          </div>
+          <p class="plan-note">Paga solo quando voli</p>
+          <ul class="plan-features">
+            <li class="feat yes">Prenotazione online</li>
+            <li class="feat yes">Check-in digitale</li>
+            <li class="feat yes">1 bagaglio a mano</li>
+            <li class="feat yes">Supporto via email</li>
+            <li class="feat no">Sconto sui voli</li>
+            <li class="feat no">Accesso lounge</li>
+            <li class="feat no">Upgrade prioritario</li>
+          </ul>
+          <button class="btn btn-outline plan-btn" onclick="showToast('Piano Economy — inizia gratis!')">Inizia gratis</button>
+        </div>
+
+        <div class="pricing-card pricing-card--featured reveal-up delay-2">
+          <div class="plan-popular">⭐ Più popolare</div>
+          <div class="plan-label">SkyPass Plus</div>
+          <div class="plan-desc">Per il viaggiatore regolare</div>
+          <div class="plan-price">
+            <span class="price-currency">€</span>
+            <span class="price-amount" data-monthly="19" data-annual="15">19</span>
+            <span class="price-period">/mese</span>
+          </div>
+          <p class="plan-note">Fatturato <span class="billing-period">mensilmente</span></p>
+          <ul class="plan-features">
+            <li class="feat yes">Tutto di Economy</li>
+            <li class="feat yes">-15% su tutti i voli</li>
+            <li class="feat yes">2 bagagli inclusi</li>
+            <li class="feat yes">Supporto prioritario 24/7</li>
+            <li class="feat yes">Scelta posto gratuita</li>
+            <li class="feat no">Accesso lounge</li>
+            <li class="feat no">Upgrade prioritario</li>
+          </ul>
+          <button class="btn btn-primary plan-btn" onclick="showToast('Attivazione SkyPass Plus in corso…')">Attiva ora</button>
+        </div>
+
+        <div class="pricing-card reveal-up delay-3">
+          <div class="plan-label">SkyPass Elite</div>
+          <div class="plan-desc">Per chi non scende a compromessi</div>
+          <div class="plan-price">
+            <span class="price-currency">€</span>
+            <span class="price-amount" data-monthly="59" data-annual="47">59</span>
+            <span class="price-period">/mese</span>
+          </div>
+          <p class="plan-note">Fatturato <span class="billing-period">mensilmente</span></p>
+          <ul class="plan-features">
+            <li class="feat yes">Tutto di SkyPass Plus</li>
+            <li class="feat yes">-30% su tutti i voli</li>
+            <li class="feat yes">Bagagli illimitati</li>
+            <li class="feat yes">Accesso lounge globale</li>
+            <li class="feat yes">Upgrade automatico</li>
+            <li class="feat yes">Concierge dedicato</li>
+            <li class="feat yes">Voli rimborsabili 100%</li>
+          </ul>
+          <button class="btn btn-outline plan-btn" onclick="showToast('Attivazione SkyPass Elite in corso…')">Scegli Elite</button>
+        </div>
+      </div>
+
+      <p class="pricing-note reveal-up">Tutti i piani includono compensazione CO₂ gratuita. Nessun costo nascosto. Cancellazione in qualsiasi momento.</p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag reveal-up">Cosa dicono i nostri passeggeri</p>
+        <h2 class="section-title reveal-up delay-1">Storie di <span class="gradient-text">volo</span></h2>
+      </div>
+      <div class="testimonials-slider" id="testimonialSlider">
+        </div>
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevBtn" aria-label="Precedente">←</button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="slider-btn" id="nextBtn" aria-label="Successivo">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-up">
+          <p class="section-tag">Siamo qui per te</p>
+          <h2 class="section-title">Contattaci <span class="gradient-text">24/7</span></h2>
+          <p>Il nostro team è sempre pronto ad assisterti in italiano, inglese, francese e spagnolo.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="contact-icon"><i data-lucide="phone"></i></span>
+              <div>
+                <strong>Telefono</strong>
+                <p>+39 02 1234 5678</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon"><i data-lucide="mail"></i></span>
+              <div>
+                <strong>Email</strong>
+                <p>info@azuresky.it</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon"><i data-lucide="message-circle"></i></span>
+              <div>
+                <strong>Live Chat</strong>
+                <p>Disponibile 24/7 sull'app</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form glass reveal-up delay-2" id="contactForm">
+          <h3>Invia un messaggio</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Nome</label>
+              <input type="text" id="contactName" placeholder="Il tuo nome" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" placeholder="la@tua.email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Oggetto</label>
+            <select id="contactSubject">
+              <option>Assistenza prenotazione</option>
+              <option>Rimborso / cancellazione</option>
+              <option>Bagagli</option>
+              <option>Feedback</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Messaggio</label>
+            <textarea id="contactMessage" placeholder="Descrivi la tua richiesta..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Invia messaggio ✈</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <i data-lucide="plane" class="logo-icon"></i>
+            <span class="logo-text">AzureSky</span>
+          </a>
+          <p>Voliamo verso il futuro, insieme. Sicurezza, comfort e innovazione ad ogni quota.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter/X"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Voli</h4>
+          <ul>
+            <li><a href="#">Voli nazionali</a></li>
+            <li><a href="#">Voli europei</a></li>
+            <li><a href="#">Voli intercontinentali</a></li>
+            <li><a href="#">Offerte speciali</a></li>
+            <li><a href="#">Voli charter</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#">Check-in online</a></li>
+            <li><a href="#">Bagagli</a></li>
+            <li><a href="#">Pasti speciali</a></li>
+            <li><a href="#">Lounge aeroportuale</a></li>
+            <li><a href="#">Programma fedeltà</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Azienda</h4>
+          <ul>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="#">Sostenibilità</a></li>
+            <li><a href="#">Lavora con noi</a></li>
+            <li><a href="#">Press Room</a></li>
+            <li><a href="#">Investitori</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AzureSky Airlines S.p.A. — Tutti i diritti riservati</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Termini e condizioni</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="loginModal" onclick="closeModal('loginModal')">
+    <div class="modal glass" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('loginModal')" aria-label="Chiudi">✕</button>
+      <h2>Benvenuto su <span class="gradient-text">AzureSky</span></h2>
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-modal-tab="login">Accedi</button>
+        <button class="modal-tab" data-modal-tab="register">Registrati</button>
+      </div>
+      <form class="modal-form" id="loginForm">
+        <input type="email" id="loginEmail" aria-label="Email" placeholder="Email" required />
+        <input type="password" id="loginPassword" aria-label="Password" placeholder="Password" required />
+        <button type="submit" class="btn btn-primary" style="width:100%">Accedi</button>
+        <p class="modal-alt">Non hai un account? <a href="#" onclick="switchModalTab('register'); return false;">Registrati</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="offerModal" onclick="closeModal('offerModal')">
+    <div class="modal glass offer-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('offerModal')" aria-label="Chiudi">✕</button>
+      <div class="offer-badge">🔥 OFFERTA ESCLUSIVA</div>
+      <h2>Vola in Europa a <span class="gradient-text">metà prezzo</span></h2>
+      <p>Prenota entro il <strong>28 febbraio 2026</strong> per voli tra marzo e maggio.</p>
+      <div class="offer-destinations">
+        <div class="offer-dest">🇬🇧 Londra<br /><strong>da €49</strong></div>
+        <div class="offer-dest">🇫🇷 Parigi<br /><strong>da €59</strong></div>
+        <div class="offer-dest">🇪🇸 Barcellona<br /><strong>da €39</strong></div>
+        <div class="offer-dest">🇩🇪 Berlino<br /><strong>da €45</strong></div>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="closeModal('offerModal');scrollTo('#search')">Prenota ora</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
