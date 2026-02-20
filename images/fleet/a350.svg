@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <!-- Airbus A350 -->
+  <defs>
+    <linearGradient id="fuselageA350" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5"/>
+      <stop offset="50%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e8e8e8"/>
+    </linearGradient>
+    <linearGradient id="wingA350" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d0d0d0"/>
+      <stop offset="100%" style="stop-color:#a0a0a0"/>
+    </linearGradient>
+  </defs>
+  <!-- Fuselage -->
+  <ellipse cx="300" cy="150" rx="200" ry="35" fill="url(#fuselageA350)" stroke="#333" stroke-width="2"/>
+  <!-- Cockpit -->
+  <ellipse cx="100" cy="150" rx="30" ry="30" fill="#87CEEB" stroke="#333" stroke-width="2"/>
+  <!-- Tail -->
+  <polygon points="500,150 550,50 560,150" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <polygon points="520,100 550,50 555,120" fill="#333"/>
+  <!-- Main Wings -->
+  <polygon points="250,150 100,50 80,100 250,150" fill="url(#wingA350)" stroke="#333" stroke-width="2"/>
+  <polygon points="250,150 350,50 370,100 250,150" fill="url(#wingA350)" stroke="#333" stroke-width="2"/>
+  <!-- Engines -->
+  <ellipse cx="180" cy="130" rx="25" ry="15" fill="#555" stroke="#333" stroke-width="2"/>
+  <ellipse cx="320" cy="130" rx="25" ry="15" fill="#555" stroke="#333" stroke-width="2"/>
+  <!-- Windows -->
+  <g fill="#87CEEB">
+    <circle cx="150" cy="140" r="3"/>
+    <circle cx="170" cy="140" r="3"/>
+    <circle cx="190" cy="140" r="3"/>
+    <circle cx="210" cy="140" r="3"/>
+    <circle cx="230" cy="140" r="3"/>
+    <circle cx="250" cy="140" r="3"/>
+    <circle cx="270" cy="140" r="3"/>
+    <circle cx="290" cy="140" r="3"/>
+    <circle cx="310" cy="140" r="3"/>
+    <circle cx="330" cy="140" r="3"/>
+    <circle cx="350" cy="140" r="3"/>
+    <circle cx="370" cy="140" r="3"/>
+  </g>
+  <!-- Text -->
+  <text x="300" y="250" font-family="Arial" font-size="20" fill="#333" text-anchor="middle">Airbus A350-900</text>
+  <text x="300" y="275" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Wide-body long-haul</text>
+</svg>

@@ -135,7 +135,8 @@ input, select, textarea, button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .reveal-up, .reveal-scale, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; will-change: auto; }
   .scroll-progress { animation: none; }
-  * { animation-duration: 60s !important; transition-duration: .01ms !important; }
+  .dest-img{ animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  * { animation-duration: 40s !important; transition-duration: .01ms !important; }
 }
 
 /* ── Section headers ── */
@@ -470,6 +471,31 @@ input, select, textarea, button { font: inherit; }
 .pricing-card--featured:hover { transform: scale(1.05) translateY(-16px); }
 .pricing-card--featured.reveal-up.visible { transform: scale(1.05) translateY(-6px); }
 .pricing-card--featured.reveal-up.visible:hover { transform: scale(1.05) translateY(-16px); }
+
+/* Subscription selected state */
+.pricing-card--selected {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 3px rgba(48, 209, 88, 0.25), var(--shadow-lg) !important;
+  transform: translateY(-12px);
+}
+.pricing-card--selected::after {
+  content: '✓ Selezionato';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pricing-card--featured.pricing-card--selected {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 3px rgba(48, 209, 88, 0.25), var(--shadow-lg) !important;
+}
 
 .plan-popular { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--blue), #5e5ce6); color: var(--white); font-size: .75rem; font-weight: 600; padding: 5px 16px; border-radius: 980px; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,113,227,.4); }
 .plan-label { font-size: 1.0625rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }

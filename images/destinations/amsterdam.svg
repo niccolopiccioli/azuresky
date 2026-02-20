@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FF8C00"/>
+  <rect x="50" y="200" width="60" height="100" fill="#8B4513"/>
+  <rect x="60" y="160" width="40" height="40" fill="#FFD700"/>
+  <polygon points="80,140 100,160 60,160" fill="#8B4513"/>
+  <rect x="150" y="180" width="50" height="120" fill="#654321"/>
+  <rect x="158" y="150" width="34" height="30" fill="#FFD700"/>
+  <polygon points="175,135 190,150 160,150" fill="#654321"/>
+  <rect x="250" y="190" width="55" height="110" fill="#8B4513"/>
+  <rect x="258" y="165" width="39" height="25" fill="#FFD700"/>
+  <polygon points="277,150 295,165 260,165" fill="#8B4513"/>
+  <path d="M0,200 Q100,180 200,200 T400,200" stroke="#4169E1" stroke-width="3" fill="none"/>
+  <path d="M0,210 Q100,190 200,210 T400,210" stroke="#4169E1" stroke-width="3" fill="none"/>
+  <text x="200" y="280" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Amsterdam 🇳🇱</text>
+</svg>

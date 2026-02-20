@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1a0a2e"/>
+  <rect x="80" y="150" width="30" height="150" fill="#FF69B4"/>
+  <rect x="120" y="100" width="30" height="200" fill="#9370DB"/>
+  <rect x="160" y="130" width="30" height="170" fill="#FF69B4"/>
+  <rect x="200" y="80" width="30" height="220" fill="#4B0082"/>
+  <rect x="240" y="120" width="30" height="180" fill="#9370DB"/>
+  <rect x="280" y="90" width="30" height="210" fill="#FF69B4"/>
+  <circle cx="330" cy="50" r="30" fill="#FFD700"/>
+  <ellipse cx="200" cy="300" rx="200" ry="40" fill="#2d1b69"/>
+  <text x="200" y="280" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Tokyo 🇯🇵</text>
+</svg>

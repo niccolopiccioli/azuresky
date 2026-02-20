@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#8B4513"/>
+  <polygon points="200,50 250,150 150,150" fill="#D4A574"/>
+  <rect x="175" y="150" width="50" height="150" fill="#C4956A"/>
+  <ellipse cx="200" cy="300" rx="180" ry="40" fill="#654321"/>
+  <text x="200" y="280" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Roma 🇮🇹</text>
+</svg>

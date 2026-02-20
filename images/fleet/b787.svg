@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <!-- Boeing 787 Dreamliner -->
+  <defs>
+    <linearGradient id="fuselageB787" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="50%" style="stop-color:#f0f0f0"/>
+      <stop offset="100%" style="stop-color:#d0d0d0"/>
+    </linearGradient>
+    <linearGradient id="wingB787" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0"/>
+      <stop offset="100%" style="stop-color:#909090"/>
+    </linearGradient>
+  </defs>
+  <!-- Fuselage -->
+  <ellipse cx="300" cy="150" rx="210" ry="32" fill="url(#fuselageB787)" stroke="#333" stroke-width="2"/>
+  <!-- Cockpit -->
+  <path d="M90,150 Q90,118 120,118 Q150,118 150,150" fill="#1E90FF" stroke="#333" stroke-width="2"/>
+  <!-- Tail -->
+  <polygon points="510,150 555,55 570,150" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <polygon points="525,90 555,55 560,110" fill="#1E90FF"/>
+  <!-- Main Wings - more swept back -->
+  <polygon points="270,150 80,45 60,90 270,150" fill="url(#wingB787)" stroke="#333" stroke-width="2"/>
+  <polygon points="270,150 380,45 400,90 270,150" fill="url(#wingB787)" stroke="#333" stroke-width="2"/>
+  <!-- Engines - raked wingtips -->
+  <ellipse cx="170" cy="125" rx="22" ry="14" fill="#404040" stroke="#333" stroke-width="2"/>
+  <ellipse cx="330" cy="125" rx="22" ry="14" fill="#404040" stroke="#333" stroke-width="2"/>
+  <!-- Windows - larger and more curved -->
+  <g fill="#1E90FF">
+    <ellipse cx="160" cy="140" rx="4" ry="3"/>
+    <ellipse cx="180" cy="140" rx="4" ry="3"/>
+    <ellipse cx="200" cy="140" rx="4" ry="3"/>
+    <ellipse cx="220" cy="140" rx="4" ry="3"/>
+    <ellipse cx="240" cy="140" rx="4" ry="3"/>
+    <ellipse cx="260" cy="140" rx="4" ry="3"/>
+    <ellipse cx="280" cy="140" rx="4" ry="3"/>
+    <ellipse cx="300" cy="140" rx="4" ry="3"/>
+    <ellipse cx="320" cy="140" rx="4" ry="3"/>
+    <ellipse cx="340" cy="140" rx="4" ry="3"/>
+    <ellipse cx="360" cy="140" rx="4" ry="3"/>
+    <ellipse cx="380" cy="140" rx="4" ry="3"/>
+  </g>
+  <!-- Text -->
+  <text x="300" y="250" font-family="Arial" font-size="20" fill="#333" text-anchor="middle">Boeing 787-9 Dreamliner</text>
+  <text x="300" y="275" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Wide-body long-haul</text>
+</svg>

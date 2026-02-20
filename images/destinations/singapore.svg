@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <circle cx="200" cy="150" r="80" fill="#E8E8E8"/>
+  <rect x="100" y="80" width="200" height="20" fill="#FF0000"/>
+  <rect x="100" y="100" width="20" height="100" fill="#FF0000"/>
+  <rect x="280" y="100" width="20" height="100" fill="#FF0000"/>
+  <polygon points="200,40 230,100 170,100" fill="#FFD700"/>
+  <rect x="195" y="130" width="10" height="120" fill="#FF0000"/>
+  <ellipse cx="200" cy="300" rx="200" ry="40" fill="#16213e"/>
+  <text x="200" y="280" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Singapore 🇸🇬</text>
+</svg>

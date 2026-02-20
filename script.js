@@ -11,18 +11,18 @@ function initIcons () {
 
 /* ── Data ─────────────────────────────────────────────── */
 const destinations = [
-  { id:1, city:'Roma',         country:'Italia',      emoji:'🇮🇹', region:'europa',  flag:'🏛️',  duration:'1h 00m', price:39,  desc:'Il Colosseo ti aspetta' },
-  { id:2, city:'Parigi',       country:'Francia',     emoji:'🇫🇷', region:'europa',  flag:'🗼',  duration:'2h 05m', price:59,  desc:'La Ville Lumière' },
-  { id:3, city:'New York',     country:'USA',         emoji:'🇺🇸', region:'america', flag:'🗽',  duration:'9h 30m', price:349, desc:'La Grande Mela' },
-  { id:4, city:'Tokyo',        country:'Giappone',    emoji:'🇯🇵', region:'asia',    flag:'⛩️',  duration:'12h 40m',price:499, desc:'Tradizione e modernità' },
-  { id:5, city:'Dubai',        country:'EAU',         emoji:'🇦🇪', region:'asia',    flag:'🏙️',  duration:'5h 50m', price:179, desc:'La città del futuro' },
-  { id:6, city:'Barcellona',   country:'Spagna',      emoji:'🇪🇸', region:'europa',  flag:'🎨',  duration:'2h 20m', price:49,  desc:'Gaudì e tapas' },
-  { id:7, city:'Nairobi',      country:'Kenya',       emoji:'🇰🇪', region:'africa',  flag:'🦁',  duration:'7h 15m', price:299, desc:'Safari indimenticabili' },
-  { id:8, city:'Londra',       country:'UK',          emoji:'🇬🇧', region:'europa',  flag:'🎡',  duration:'2h 25m', price:69,  desc:'Big Ben e molto altro' },
-  { id:9, city:'San Paolo',    country:'Brasile',     emoji:'🇧🇷', region:'america', flag:'🌴',  duration:'11h 00m',price:419, desc:'Energia e cultura' },
-  { id:10,city:'Singapore',    country:'Singapore',   emoji:'🇸🇬', region:'asia',    flag:'🌆',  duration:'13h 30m',price:559, desc:'Il giardino nella città' },
-  { id:11,city:'Amsterdam',    country:'Olanda',      emoji:'🇳🇱', region:'europa',  flag:'🌷',  duration:'2h 10m', price:55,  desc:'Canali e tulipani' },
-  { id:12,city:'Marrakech',    country:'Marocco',     emoji:'🇲🇦', region:'africa',  flag:'🕌',  duration:'3h 05m', price:89,  desc:'I suk e le spezie' },
+  { id:1, city:'Roma', country:'Italia', emoji:'🇮🇹', region:'europa', flag:'', duration:'1h 00m', price:39, desc:'Il Colosseo ti aspetta', img:'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1200&auto=format&fit=crop' },
+  { id:2, city:'Parigi', country:'Francia', emoji:'🇫🇷', region:'europa', flag:'', duration:'2h 05m', price:59, desc:'La Ville Lumière', img:'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop' },
+  { id:3, city:'New York', country:'USA', emoji:'🇺🇸', region:'america', flag:'', duration:'9h 30m', price:349, desc:'La Grande Mela', img:'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1200&auto=format&fit=crop' },
+  { id:4, city:'Tokyo', country:'Giappone', emoji:'🇯🇵', region:'asia', flag:'', duration:'12h 40m', price:499, desc:'Tradizione e modernità', img:'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1200&auto=format&fit=crop' },
+  { id:5, city:'Dubai', country:'EAU', emoji:'🇦🇪', region:'asia', flag:'', duration:'5h 50m', price:179, desc:'La città del futuro', img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop' },
+  { id:6, city:'Barcellona', country:'Spagna', emoji:'🇪🇸', region:'europa', flag:'', duration:'2h 20m', price:49, desc:'Gaudì e tapas', img:'https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?q=80&w=1200&auto=format&fit=crop' },
+  { id:7, city:'Nairobi', country:'Kenya', emoji:'🇰🇪', region:'africa', flag:'', duration:'7h 15m', price:299, desc:'Safari indimenticabili', img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1200&auto=format&fit=crop' },
+  { id:8, city:'Londra', country:'UK', emoji:'🇬🇧', region:'europa', flag:'', duration:'2h 25m', price:69, desc:'Big Ben e molto altro', img:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop' },
+  { id:9, city:'San Paolo', country:'Brasile', emoji:'🇧🇷', region:'america', flag:'', duration:'11h 00m', price:419, desc:'Energia e cultura', img:'https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1200&auto=format&fit=crop' },
+  { id:10,city:'Singapore', country:'Singapore', emoji:'🇸🇬', region:'asia', flag:'', duration:'13h 30m', price:559, desc:'Il giardino nella città', img:'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=1200&auto=format&fit=crop' },
+  { id:11,city:'Amsterdam', country:'Olanda', emoji:'🇳🇱', region:'europa', flag:'', duration:'2h 10m', price:55, desc:'Canali e tulipani', img:'https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=1200&auto=format&fit=crop' },
+  { id:12,city:'Marrakech', country:'Marocco', emoji:'🇲🇦', region:'africa', flag:'', duration:'3h 05m', price:89, desc:'I suk e le spezie', img:'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=1200&auto=format&fit=crop' }
 ];
 
 const fleetData = {
@@ -30,6 +30,7 @@ const fleetData = {
     name: 'Airbus A350-900',
     subtitle: 'Il gioiello della nostra flotta',
     emoji: '✈️',
+    img: 'images/fleet/a350.png',
     specs: [
       { val: '313', label: 'Passeggeri' },
       { val: '15.000', label: 'km di autonomia' },
@@ -42,6 +43,7 @@ const fleetData = {
     name: 'Boeing 787-9 Dreamliner',
     subtitle: 'L\'innovazione al servizio del comfort',
     emoji: '🛫',
+    img: 'images/fleet/b787.png',
     specs: [
       { val: '296', label: 'Passeggeri' },
       { val: '14.140', label: 'km di autonomia' },
@@ -54,6 +56,7 @@ const fleetData = {
     name: 'Airbus A220-300',
     subtitle: 'Perfetto per le rotte europee',
     emoji: '🛩️',
+    img: 'images/fleet/a220.png',
     specs: [
       { val: '130', label: 'Passeggeri' },
       { val: '6.300', label: 'km di autonomia' },
@@ -78,6 +81,30 @@ const testimonials = [
     { name:'Luca V.', route:'Milano → Singapore', avatar:'L', stars:5, text:'"La suite in First Class è qualcosa di unico. Privacy totale, letto matrimoniale, menù degustazione con vini selezionati. Un\'esperienza che ricorderò a lungo."' },
   ]
 ];
+
+/* ── Subscription selection tracking ─────────────────── */
+let selectedSubscription = null;
+
+/* ── Subscription selection function ──────────────────── */
+window.selectSubscription = function(planName, element) {
+  // Remove selected class from all pricing cards
+  document.querySelectorAll('.pricing-card').forEach(card => {
+    card.classList.remove('pricing-card--selected');
+  });
+  
+  // Add selected class to the clicked card
+  if (element) {
+    element.closest('.pricing-card').classList.add('pricing-card--selected');
+  }
+  
+  // Store the selected subscription
+  selectedSubscription = planName;
+  
+  // Show confirmation
+  showToast(`✓ Abbonamento ${planName} selezionato!`);
+  
+  console.log('Subscription selected:', planName);
+};
 
 /* ── Scroll progress bar ──────────────────────────────── */
 const scrollProgress = document.getElementById('scrollProgress');
@@ -190,8 +217,9 @@ function renderDestinations (filter = 'all') {
     card.style.animationDelay = `${(i % 6) * 0.06}s`;
     card.innerHTML = `
       <div class="dest-img" style="background:${getGradient(d.region)}">
-        <span style="position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))">${d.flag}</span>
+        <img src="${d.img}" alt="${d.city}" class="dest-image" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.7" />
         <div class="dest-overlay"></div>
+        <span style="position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))">${d.flag}</span>
         <span class="dest-badge">${d.emoji} ${d.country}</span>
       </div>
       <div class="dest-body">
@@ -244,7 +272,9 @@ function renderFleet (key) {
   if (!display || !data) return;
 
   display.innerHTML = `
-    <div class="fleet-visual">${data.emoji}</div>
+    <div class="fleet-visual">
+      <img src="${data.img}" alt="${data.name}" style="width:100%;height:auto;max-height:250px;object-fit:contain" />
+    </div>
     <div class="fleet-info">
       <h3>${data.name}</h3>
       <p class="fleet-subtitle">${data.subtitle}</p>
