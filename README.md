@@ -1,65 +1,52 @@
-# AzureSky Airlines — Website
+# AzureSky Airlines
 
-Sito web moderno per la compagnia aerea **AzureSky Airlines**, realizzato con HTML5, CSS3 e JavaScript vanilla puro, con estetica ispirata ad Apple.
+Brand landing page for **AzureSky Airlines** — a modern airline concept built with vanilla HTML5, CSS3, and JavaScript (ES2022).
 
-## Stack tecnologico
+Apple-inspired aesthetic with glassmorphism, smooth animations, and responsive layout.
 
-| Layer      | Tecnologia                                                    |
-|------------|---------------------------------------------------------------|
-| Markup     | HTML5 semantico (landmark roles, form nativo)                 |
-| Stile      | CSS3 — Custom Properties, Grid, Flexbox, `backdrop-filter`    |
-| Script     | Vanilla JS ES2022 — `IntersectionObserver`, `requestAnimationFrame` |
-| Font       | Sistema nativo (`-apple-system`, `BlinkMacSystemFont`, Inter) |
-| Server     | Python 3 `http.server` (sviluppo locale)                      |
+## Stack
 
-## Struttura del progetto
+| Layer | Technology |
+|-------|------------|
+| Markup | Semantic HTML5 (landmark roles, native forms) |
+| Styling | CSS3 — Custom Properties, Grid, Flexbox, `backdrop-filter`, `clamp()` |
+| Script | Vanilla JS ES2022 — `IntersectionObserver`, `requestAnimationFrame` |
+| Fonts | `-apple-system`, Inter |
 
-```
-prova1/
-├── index.html     # Struttura HTML
-├── style.css      # Design system Apple-inspired
-├── script.js      # Logica interattiva
-├── README.md      # Questo file
-└── CLAUDE.md      # Istruzioni per Claude Code
-```
+## Sections
 
-## Sezioni del sito
+- **Navbar** — sticky with glassmorphism on scroll
+- **Hero** — animated airplane, stars, animated counters
+- **Search** — flight search form with validation
+- **Destinations** — filterable grid by continent (12 destinations)
+- **Services** — 6 service cards with hover effects
+- **Fleet** — tab switcher with 3 aircraft models
+- **CTA Banner** — gradient promotional section
+- **Testimonials** — auto-sliding carousel with dot navigation
+- **Contact** — contact form
+- **Footer** — links, social, legal
 
-- **Navbar** — sticky con effetto glassmorphism allo scroll
-- **Hero** — animazione aereo in volo, stelle, contatori animati
-- **Search** — form di ricerca voli con validazione
-- **Destinations** — grid filtrabile per continente (12 destinazioni)
-- **Services** — 6 card servizi con hover effect
-- **Fleet** — tab switcher con 3 modelli di aereo
-- **CTA Banner** — offerta con gradiente
-- **Testimonials** — slider automatico con dot navigation
-- **Contact** — form di contatto
-- **Footer** — link, social, legal
-
-## Come avviare
+## Getting Started
 
 ```bash
-cd /home/nicco/Code/prova1
 python3 -m http.server 8080
 ```
 
-Poi apri `http://localhost:8080` nel browser.
+Open [http://localhost:8080](http://localhost:8080).
 
-## Features CSS moderne
+## Key CSS
 
-- `backdrop-filter: blur()` — effetto frosted glass
+- `backdrop-filter: blur()` — frosted glass effect
 - CSS Custom Properties — design token system
-- CSS Grid + Flexbox — layout adattivo
-- `clamp()` — tipografia fluida
-- `cubic-bezier` custom — animazioni spring
-- `@keyframes` — animazioni nativo (aereo, stelle, sfondo)
+- `clamp()` — fluid typography
+- Custom `cubic-bezier` — spring animations
+- `@keyframes` — native animations (airplane, stars)
 
-## Features JS moderne
+## Key JavaScript
 
-- `IntersectionObserver` — reveal on scroll, contatori
-- `requestAnimationFrame` — counter animation smooth
-- `performance.now()` — timing preciso animazioni
-- `data-*` attributes — filtri destinazioni, tab fleet
-- Event delegation e cleanup corretto
-- Keyboard navigation (Enter/Space sui filter btn)
-- Parallax su mousemove in hero
+- `IntersectionObserver` — scroll reveals, animated counters
+- `requestAnimationFrame` — smooth counter animation
+- `data-*` attributes — destination filtering, fleet tabs
+- Event delegation with proper cleanup
+- Keyboard navigation (Enter/Space on filter buttons)
+- Mouse parallax on hero section
