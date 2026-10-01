@@ -4,6 +4,102 @@
 
 'use strict';
 
+/* ── Firebase Configuration ─────────────────────────────── */
+const firebaseConfig = {
+  apiKey: "AIzaSyC6mT3XnT2eTzFvVYOiOwt5G3m2KzXqHlk",
+  authDomain: "azuresky-fly.firebaseapp.com",
+  projectId: "azuresky-fly",
+  storageBucket: "azuresky-fly.appspot.com",
+  messagingSenderId: "your-sender-id",
+  appId: "1:your-app-id:web:your-web-id"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+/* ── Auth Functions ───────────────────────────────────────── */
+function showToast (message) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+window.handleLogin = async function (email, password) {
+  try {
+    showToast('Accesso in corso...');
+    await auth.signInWithEmailAndPassword(email, password);
+    showToast('✓ Accesso effettuato!');
+    closeModal('loginModal');
+  } catch (error) {
+    console.error('Login error:', error);
+    const messages = {
+      'auth/user-not-found': 'Utente non trovato',
+      'auth/wrong-password': 'Password errata',
+      'auth/invalid-email': 'Email non valida',
+      'auth/network-request-failed': 'Errore di rete'
+    };
+    showToast(messages[error.code] || 'Errore di accesso');
+  }
+};
+
+window.handleRegister = async function (email, password, name) {
+  try {
+    showToast('Registrazione in corso...');
+    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+    await userCredential.user.updateProfile({ displayName: name });
+    showToast('✓ Registrazione completata!');
+    closeModal('loginModal');
+  } catch (error) {
+    console.error('Register error:', error);
+    const messages = {
+      'auth/email-already-in-use': 'Email già registrata',
+      'auth/weak-password': 'Password troppo debole',
+      'auth/invalid-email': 'Email non valida'
+    };
+    showToast(messages[error.code] || 'Errore di registrazione');
+  }
+};
+
+window.loginWithGoogle = async function () {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  try {
+    showToast('Accesso con Google...');
+    await auth.signInWithPopup(provider);
+    showToast('✓ Accesso effettuato!');
+    closeModal('loginModal');
+  } catch (error) {
+    console.error('Google login error:', error);
+    showToast('Errore con Google');
+  }
+};
+
+/* ── Form Handlers ───────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail')?.value;
+      const password = document.getElementById('loginPassword')?.value;
+      if (email && password) window.handleLogin(email, password);
+    });
+  }
+  
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('registerName')?.value;
+      const email = document.getElementById('registerEmail')?.value;
+      const password = document.getElementById('registerPassword')?.value;
+      if (name && email && password) window.handleRegister(email, password, name);
+    });
+  }
+});
+
 /* ── Lucide helper ────────────────────────────────────── */
 function initIcons () {
   if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -446,10 +542,25 @@ document.addEventListener('keydown', (e) => {
 /* ── Modal tabs ───────────────────────────────────────── */
 document.querySelectorAll('.modal-tab').forEach(tab => {
   tab.addEventListener('click', () => {
-    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+    const tabName = tab.dataset.modalTab;
+    switchModalTab(tabName);
   });
 });
+
+window.switchModalTab = function (tabName) {
+  document.querySelectorAll('.modal-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.modalTab === tabName);
+  });
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  if (tabName === 'login') {
+    if (loginForm) loginForm.style.display = 'block';
+    if (registerForm) registerForm.style.display = 'none';
+  } else {
+    if (loginForm) loginForm.style.display = 'none';
+    if (registerForm) registerForm.style.display = 'block';
+  }
+};
 
 window.switchModalTab = function (tabName) {
   document.querySelectorAll('.modal-tab').forEach(tab => {

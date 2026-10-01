@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -480,11 +484,28 @@
         <button class="modal-tab active" data-modal-tab="login">Accedi</button>
         <button class="modal-tab" data-modal-tab="register">Registrati</button>
       </div>
+      
+      <!-- Login Form -->
       <form class="modal-form" id="loginForm">
         <input type="email" id="loginEmail" aria-label="Email" placeholder="Email" required />
         <input type="password" id="loginPassword" aria-label="Password" placeholder="Password" required />
         <button type="submit" class="btn btn-primary" style="width:100%">Accedi</button>
+        <button type="button" class="btn btn-ghost" style="width:100%;margin-top:10px" onclick="loginWithGoogle()">
+          <i data-lucide="chrome"></i> Accedi con Google
+        </button>
         <p class="modal-alt">Non hai un account? <a href="#" onclick="switchModalTab('register'); return false;">Registrati</a></p>
+      </form>
+      
+      <!-- Register Form -->
+      <form class="modal-form" id="registerForm" style="display:none">
+        <input type="text" id="registerName" aria-label="Nome" placeholder="Nome completo" required />
+        <input type="email" id="registerEmail" aria-label="Email" placeholder="Email" required />
+        <input type="password" id="registerPassword" aria-label="Password" placeholder="Password" required minlength="6" />
+        <button type="submit" class="btn btn-primary" style="width:100%">Registrati</button>
+        <button type="button" class="btn btn-ghost" style="width:100%;margin-top:10px" onclick="loginWithGoogle()">
+          <i data-lucide="chrome"></i> Registrati con Google
+        </button>
+        <p class="modal-alt">Hai già un account? <a href="#" onclick="switchModalTab('login'); return false;">Accedi</a></p>
       </form>
     </div>
   </div>
